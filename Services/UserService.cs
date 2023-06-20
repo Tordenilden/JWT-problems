@@ -15,7 +15,26 @@ public interface IUserService
     IEnumerable<User> GetAll();
     User GetById(int id);
 }
-
+/// <summary>
+/// Den starter i UserService
+/// Invoke()
+/// attachUserToContext()
+/// 
+/// await _next(context); => 
+/// 
+///     public void OnAuthorization(AuthorizationFilterContext context)
+///     {
+///     var user = (User)context.HttpContext.Items["User"];
+///     if (user == null)
+///     {
+            // not logged in
+            //context.Result = new JsonResult(new { message = "Unauthorized" }) { StatusCode = StatusCodes.Status401Unauthorized };
+        //}
+    //}
+/// 
+/// 
+/// Controller => GetAll()
+/// </summary>
 public class UserService : IUserService
 {
     // users hardcoded for simplicity, store in a db with hashed passwords in production applications
